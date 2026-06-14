@@ -7,6 +7,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from '../../vendor/OrbitControls.js';
 import { buildFish3D } from './fish3d.js';
+import { loadFishModel } from './fishModel.js';
 
 export function createScene3D(container, { ground, fish, single = false } = {}) {
   const theme = ground ? ground.theme : { top: '#1b4a6b', mid: '#0e2c44', deep: '#06121f', accent: '#5b9bd6' };
@@ -114,27 +115,54 @@ export function createScene3D(container, { ground, fish, single = false } = {}) 
   scene.add(bubbles);
 
   // ---- 鱼 ----
-  const list = (fish || []).slice(0, single ? 1 : 8);
-  const built = list.map((f, i) => {
-    const b = buildFish3D(f.svg, { speed: 1.8 + Math.random() * 1.2 });
-    scene.add(b.group);
-    let path = null;
+  // 放置：设定缩放/位置/游动路径（程序化模型与 GLB 模型通用）
+  function placeFish(b) {
     if (single) {
       b.group.position.set(0, 0, 0);
-      const s = 2.4 / Math.max(b.len, 2); // 适配视口
-      b.group.scale.setScalar(s);
+      b.group.scale.setScalar(2.4 / Math.max(b.len, 2));
+      b.path = null;
     } else {
-      const s = 0.5 + Math.random() * 0.5;
-      b.group.scale.setScalar(s);
-      path = {
+      b.group.scale.setScalar(0.5 + Math.random() * 0.5);
+      b.path = {
         rx: 6 + Math.random() * 16, rz: 5 + Math.random() * 14,
         y: -2.5 + Math.random() * 6, phase: Math.random() * Math.PI * 2,
         spd: (0.12 + Math.random() * 0.18) * (Math.random() < 0.5 ? 1 : -1),
         bob: 0.4 + Math.random() * 0.6,
       };
     }
-    return { ...b, path };
+    return b;
+  }
+
+  const list = (fish || []).slice(0, single ? 1 : 8);
+  const built = [];
+  list.forEach((f) => {
+    if (f.modelUrl) {
+      // 真实 GLB 模型：异步加载；失败回退程序化模型
+      loadFishModel(f.modelUrl, { single, hints: f.modelHints }).then((b) => {
+        if (!running) { b.dispose(); return; }
+        scene.add(b.group); built.push(placeFish(b));
+        if (single) showModelInfo(b.info);
+      }).catch((err) => {
+        console.warn('GLB 加载失败，回退程序化模型：', err && err.message ? err.message : err);
+        if (!running) return;
+        const b = buildFish3D(f.svg, { speed: 2 });
+        scene.add(b.group); built.push(placeFish(b));
+      });
+    } else {
+      const b = buildFish3D(f.svg, { speed: 1.8 + Math.random() * 1.2 });
+      scene.add(b.group); built.push(placeFish(b));
+    }
   });
+
+  // 单鱼模式下展示模型检查器结果（骨骼/morph/动画/张嘴）
+  function showModelInfo(info) {
+    const el = document.createElement('div');
+    el.className = 'model-info';
+    el.innerHTML =
+      `网格 ${info.meshes.length} · 骨骼 ${info.bones.length} · morph ${info.morphs.length} · 动画 ${info.animations.length}<br>` +
+      `张嘴：${info.jaw}`;
+    container.appendChild(el);
+  }
 
   // ---- 动画循环 ----
   const clock = new THREE.Clock();
@@ -201,6 +229,8 @@ export function createScene3D(container, { ground, fish, single = false } = {}) 
     disposables.forEach((d) => d.dispose && d.dispose());
     renderer.dispose();
     if (renderer.domElement.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement);
+    const info = container.querySelector('.model-info');
+    if (info) info.remove();
   }
 
   return { dispose };
