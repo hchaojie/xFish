@@ -1,6 +1,7 @@
 name: Fetch fish images
 
-# 手动触发：在 CI（联网）中按学名抓取各鱼种的开放许可照片，回填后提交。
+# 在 CI（联网）中按学名抓取各鱼种的开放许可照片，回填后提交。
+# 触发：手动；或当抓取脚本/本工作流被修改并推送到开发分支时（便于在 main 之外先跑一轮）。
 on:
   workflow_dispatch:
     inputs:
@@ -8,6 +9,12 @@ on:
         description: '是否接受 CC-BY-NC（非商用）图片（默认仅 CC0/CC-BY/CC-BY-SA/公有领域）'
         type: boolean
         default: false
+  push:
+    branches:
+      - claude/fishing-game-qtweng
+    paths:
+      - 'tools/fetch-fish-images.mjs'
+      - '.github/workflows/fetch-images.yml'
 
 permissions:
   contents: write
