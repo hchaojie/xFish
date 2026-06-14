@@ -17,12 +17,32 @@ const API = 'https://en.wikipedia.org/w/api.php';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const stripHtml = (s) => (s || '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
 
+// 带退避重试的 fetch：对 429/503 按 Retry-After 或指数退避重试
+async function fetchRetry(url, opts = {}, tries = 5) {
+  let last;
+  for (let i = 0; i < tries; i++) {
+    const res = await fetch(url, opts);
+    if (res.ok) return res;
+    last = res.status;
+    if ((res.status === 429 || res.status === 503) && i < tries - 1) {
+      const ra = parseInt(res.headers.get('retry-after') || '', 10);
+      const wait = Number.isFinite(ra) ? ra * 1000 : 800 * 2 ** i;
+      await sleep(Math.min(wait, 8000));
+      continue;
+    }
+    break;
+  }
+  throw new Error(`HTTP ${last}`);
+}
+
 async function api(params) {
   const url = `${API}?${new URLSearchParams({ format: 'json', formatversion: '2', ...params })}`;
-  const res = await fetch(url, { headers: { 'User-Agent': UA, 'Accept': 'application/json' } });
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${params.titles}`);
+  const res = await fetchRetry(url, { headers: { 'User-Agent': UA, 'Accept': 'application/json' } });
   return res.json();
 }
+
+// 排除非照片的首图（分布图/地图/示意图/矢量图标）
+const NON_PHOTO = /distribution|locator|range[_-]?map|\bmap\b|diagram|chart|\.svg$/i;
 
 // 词条首图（原图 URL + 文件名）
 async function leadImage(title) {
@@ -32,6 +52,7 @@ async function leadImage(title) {
   const file = page.pageimage;
   const src = page.original?.source;
   if (!file || !src) return null;
+  if (NON_PHOTO.test(file)) return null; // 跳过分布图等非照片
   return { file, src };
 }
 
@@ -64,8 +85,7 @@ function extOf(url) {
 }
 
 async function download(url, dest) {
-  const res = await fetch(url, { headers: { 'User-Agent': UA } });
-  if (!res.ok) throw new Error(`download HTTP ${res.status}`);
+  const res = await fetchRetry(url, { headers: { 'User-Agent': UA } });
   const buf = Buffer.from(await res.arrayBuffer());
   await writeFile(dest, buf);
   return buf.length;
@@ -107,10 +127,10 @@ async function run() {
       } catch (e) {
         report.push(`ERR   ${f.id}  «${title}»  ${e.message}`);
       }
-      await sleep(400);
+      await sleep(700);
     }
     if (!done && !images[f.id]) report.push(`MISS  ${f.id}  无合规图片，保留插画`);
-    await sleep(400);
+    await sleep(1100);
   }
 
   // 写出生成文件

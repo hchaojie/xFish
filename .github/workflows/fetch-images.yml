@@ -32,7 +32,9 @@ jobs:
           node-version: '22'
 
       - name: Fetch images
-        run: node tools/fetch-fish-images.mjs
+        run: |
+          rm -rf assets/fish
+          node tools/fetch-fish-images.mjs
         env:
           ALLOW_NC: ${{ inputs.allow_nc }}
 
