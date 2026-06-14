@@ -88,6 +88,8 @@ export const fish = [
     diet: '肉食（活鱼虾）', habitat: '清洁江河湖泊的石砾底、桥墩与树桩附近', baits: '活泥鳅、小鱼；路亚假饵有效',
     desc: '鳜鱼又名桂鱼，体侧扁、背部隆起，遍布不规则黑褐色斑块以利伏击伪装。它是凶猛的纯肉食鱼，只吃活物，自孵化起便以鱼苗为食。肉质洁白细嫩、"无小刺"，自古为名贵食材，张志和"桃花流水鳜鱼肥"道尽其鲜美。',
     svg: { body: 'deep', palette: ['#b59b54', '#d8c27e', '#f3ead0'], pattern: 'blotch', fin: 'spiny', tail: 'fan' },
+    // 测试用真实 GLB 模型（用户提交到 assets/models/）；存在则 3D 查看器优先加载，失败回退程序化模型
+    modelUrl: 'assets/models/mandarinfish.glb',
     imageUrl: null,
   },
   {
