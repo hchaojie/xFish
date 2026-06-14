@@ -1,0 +1,45 @@
+name: Deploy to GitHub Pages
+
+# 纯静态站点：直接把仓库根目录作为站点发布到 GitHub Pages。
+# 触发：推送到 main 或开发分支，或手动运行。
+on:
+  push:
+    branches:
+      - main
+      - claude/fishing-game-qtweng
+  workflow_dispatch:
+
+# GitHub Pages 部署所需权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只跑一个部署，新推送取消进行中的旧部署
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 读取 Pages 配置（需先在仓库 Settings → Pages 把 Source 设为 “GitHub Actions”）
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      # 上传整个仓库根目录作为静态站点产物
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
