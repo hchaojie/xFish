@@ -22,7 +22,10 @@ export function ground(params) {
     </div>
     <div class="ground-intro">
       <p>${g.desc}</p>
-      <span class="ground-intro__count">栖息 ${list.length} 种鱼</span>
+      <div class="ground-intro__bar">
+        <span class="ground-intro__count">栖息 ${list.length} 种鱼</span>
+        <button class="btn btn-primary btn-sm" data-go="/tank/${g.id}">🐠 进入 3D 水族馆</button>
+      </div>
     </div>
     <div class="fish-grid">${list.map(fishCard).join('')}</div>
   `;

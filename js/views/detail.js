@@ -3,6 +3,7 @@ import { fishById, groundById, rarities, fishByGround } from '../data/fish.js';
 import { fishSvg } from '../render/fishSvg.js';
 import { setScene } from '../render/scene.js';
 import { navigate } from '../util/router.js';
+import { createScene3D } from '../render/scene3d.js';
 
 function rangeText(arr, unit) {
   return arr[0] === arr[1] ? `${arr[0]} ${unit}` : `${arr[0]}–${arr[1]} ${unit}`;
@@ -55,7 +56,11 @@ export function detail(params) {
     </div>
 
     <div class="detail-hero" style="--accent:${g.theme.accent}">
-      <div class="detail-art">${art}</div>
+      <div class="detail-art">
+        <div class="art-2d">${art}</div>
+        <div class="art-3d" hidden></div>
+        <button class="art-toggle" data-toggle3d aria-pressed="false">🧊 查看 3D 模型</button>
+      </div>
       <div class="detail-head">
         <h1 class="detail-name">${f.name}</h1>
         <div class="detail-sub"><i>${f.sciName}</i> · ${f.enName}</div>
@@ -88,5 +93,34 @@ export function detail(params) {
   el.querySelectorAll('[data-go]').forEach((b) =>
     b.addEventListener('click', () => navigate(b.dataset.go))
   );
+
+  // 2D 插画 ⇄ 3D 模型 切换（3D 懒加载）
+  let viewer = null;
+  const art2d = el.querySelector('.art-2d');
+  const art3d = el.querySelector('.art-3d');
+  const toggle = el.querySelector('[data-toggle3d]');
+  toggle.addEventListener('click', () => {
+    const show3d = art3d.hidden;
+    if (show3d) {
+      art2d.hidden = true;
+      art3d.hidden = false;
+      toggle.textContent = '🖼 返回插画';
+      toggle.setAttribute('aria-pressed', 'true');
+      if (!viewer) {
+        try {
+          viewer = createScene3D(art3d, { ground: g, fish: [f], single: true });
+        } catch (e) {
+          art3d.innerHTML = `<div class="tank-error">3D 初始化失败：${e.message}</div>`;
+        }
+      }
+    } else {
+      art3d.hidden = true;
+      art2d.hidden = false;
+      toggle.textContent = '🧊 查看 3D 模型';
+      toggle.setAttribute('aria-pressed', 'false');
+    }
+  });
+
+  el.__cleanup = () => { if (viewer) viewer.dispose(); };
   return el;
 }
