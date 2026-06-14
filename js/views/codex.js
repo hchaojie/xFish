@@ -10,10 +10,10 @@ export function fishCard(f) {
   const stars = '★'.repeat(r.stars) + '☆'.repeat(4 - r.stars);
   const g = groundById[f.groundId];
   return `
-    <article class="fish-card" data-fish="${f.id}" data-rarity="${f.rarity}" data-ground="${f.groundId}" data-name="${f.name}${f.enName}${f.sciName}">
+    <article class="fish-card" data-fish="${f.id}" data-rarity="${f.rarity}" data-ground="${[f.groundId, ...(f.alsoIn || [])].join(' ')}" data-name="${f.name}${f.alias || ''}${f.enName}${f.sciName}">
       <div class="fish-card__art ${f.imageUrl ? 'has-photo' : ''}" style="--accent:${g.theme.accent}">${f.imageUrl ? `<img src="${f.imageUrl}" alt="${f.name}" loading="lazy" />` : fishSvg(f.svg, { size: 160, swim: true })}</div>
       <div class="fish-card__info">
-        <div class="fish-card__name">${f.name}</div>
+        <div class="fish-card__name">${f.name}${f.alias ? `<span class="fish-card__alias">俗名 ${f.alias}</span>` : ''}</div>
         <div class="fish-card__sci">${f.sciName}</div>
         <div class="fish-card__meta">
           <span class="rarity" style="color:${r.color}" title="${r.name}">${stars}</span>
@@ -61,7 +61,7 @@ export function codex() {
   function apply() {
     let visible = 0;
     grid.querySelectorAll('.fish-card').forEach((c) => {
-      const okG = state.ground === 'all' || c.dataset.ground === state.ground;
+      const okG = state.ground === 'all' || c.dataset.ground.split(' ').includes(state.ground);
       const okR = state.rarity === 'all' || c.dataset.rarity === state.rarity;
       const okQ = !state.q || c.dataset.name.toLowerCase().includes(state.q);
       const show = okG && okR && okQ;

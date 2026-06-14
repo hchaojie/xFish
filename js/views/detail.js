@@ -37,6 +37,7 @@ export function detail(params) {
     : '';
 
   const facts = [
+    ...(f.alias ? [['俗名', f.alias]] : []),
     ['学名', `<i>${f.sciName}</i>`],
     ['英文名', f.enName],
     ['所属渔场', `${g.icon} ${g.name}`],
@@ -67,7 +68,7 @@ export function detail(params) {
       </div>
       <div class="detail-head">
         <h1 class="detail-name">${f.name}</h1>
-        <div class="detail-sub"><i>${f.sciName}</i> · ${f.enName}</div>
+        <div class="detail-sub">${f.alias ? `俗名 ${f.alias} · ` : ''}学名 <i>${f.sciName}</i>${f.enName ? ` · ${f.enName}` : ''}</div>
         <div class="detail-badges">
           <span class="badge" style="background:${r.color}22;color:${r.color};border-color:${r.color}55">${stars} ${r.name}</span>
           <span class="badge" style="--bc:${g.theme.accent}">${g.icon} ${g.name}</span>
