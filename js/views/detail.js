@@ -27,10 +27,14 @@ export function detail(params) {
   setScene(g, [f, ...fishByGround(g.id).filter((x) => x.id !== f.id)]);
   const stars = '★'.repeat(r.stars) + '☆'.repeat(4 - r.stars);
 
-  // 图片：优先真实图片(imageUrl)，否则用自制 SVG 插画
+  // 图片：优先真实照片(imageUrl)，否则用自制 SVG 插画
   const art = f.imageUrl
-    ? `<img class="detail-img" src="${f.imageUrl}" alt="${f.name}" />`
+    ? `<img class="detail-img" src="${f.imageUrl}" alt="${f.name}" loading="lazy" />`
     : fishSvg(f.svg, { size: 360, swim: true });
+  // 真实照片需署名（CC/公有领域合规）
+  const credit = f.imageUrl && f.imageAttribution
+    ? `<div class="img-credit">📷 ${f.imageAttribution}${f.imageSourceUrl ? ` · <a href="${f.imageSourceUrl}" target="_blank" rel="noopener">${f.imageSource || 'Wikimedia'}</a>` : ''}${f.imageLicense ? ` · <a href="${f.imageLicenseUrl || '#'}" target="_blank" rel="noopener">${f.imageLicense}</a>` : ''}</div>`
+    : '';
 
   const facts = [
     ['学名', `<i>${f.sciName}</i>`],
@@ -57,7 +61,7 @@ export function detail(params) {
 
     <div class="detail-hero" style="--accent:${g.theme.accent}">
       <div class="detail-art">
-        <div class="art-2d">${art}</div>
+        <div class="art-2d">${art}${credit}</div>
         <div class="art-3d" hidden></div>
         <button class="art-toggle" data-toggle3d aria-pressed="false">🧊 查看 3D 模型</button>
       </div>
@@ -87,7 +91,9 @@ export function detail(params) {
       </dl>
     </section>
 
-    <div class="detail-note">📷 当前展示为自制矢量插画；该鱼数据已预留真实照片位（imageUrl），后续可无缝替换为实拍图或 3D 模型。</div>
+    <div class="detail-note">${f.imageUrl
+      ? '📷 照片来自 Wikimedia Commons 等开放许可来源，已标注作者与许可；点「🧊 查看 3D 模型」可切换程序化 3D。'
+      : '📷 当前展示为自制矢量插画；该鱼数据已预留真实照片位（imageUrl），可由抓取脚本自动填充实拍图。'}</div>
   `;
 
   el.querySelectorAll('[data-go]').forEach((b) =>

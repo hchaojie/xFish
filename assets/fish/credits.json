@@ -1,0 +1,178 @@
+{
+  "carp": {
+    "url": "assets/fish/carp.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "George Chernilevsky",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cyprinus_carpio_2008_G1_(cropped).jpg"
+  },
+  "grasscarp": {
+    "url": "assets/fish/grasscarp.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "author": "Dezidor",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2x_amur_b%C3%ADl%C3%BD.jpg"
+  },
+  "catfish": {
+    "url": "assets/fish/catfish.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "rhosoi",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silurus.jpg"
+  },
+  "mandarinfish": {
+    "url": "assets/fish/mandarinfish.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Andshel",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%83%D1%85%D0%B0_(%D0%BA%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D0%BE%D0%BA%D1%83%D0%BD%D1%8C)_%D1%87%D1%83%D1%87%D0%B5%D0%BB%D0%BE.JPG"
+  },
+  "blackcarp": {
+    "url": "assets/fish/blackcarp.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "author": "Leo Nico, (United States Geological Survey) (Original uploader was Zp at cs.wikipedia)",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mylopharyngodon_piceus.jpg"
+  },
+  "crucian": {
+    "url": "assets/fish/crucian.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "לינה אבוגוש",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gold_fish1.jpg"
+  },
+  "bighead": {
+    "url": "assets/fish/bighead.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Invasive Carp Regional Coordinating Committee",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bighead_carp_(March_2012).jpg"
+  },
+  "silvercarp": {
+    "url": "assets/fish/silvercarp.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "author": "USFWS Mountain-Prairie",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silver_Carp_Adult_(Hypophthalmichthys_molitrix).jpg"
+  },
+  "culter": {
+    "url": "assets/fish/culter.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "A. C. Tatarinov",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Culter_alburnus.jpg"
+  },
+  "tilapia": {
+    "url": "assets/fish/tilapia.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Germano Roberto Schüür",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Til%C3%A1pia_ou_Sarotherodon_niloticus_2.jpg"
+  },
+  "seabass": {
+    "url": "assets/fish/seabass.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Izuzuki",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suzuki201302.jpg"
+  },
+  "croaker": {
+    "url": "assets/fish/croaker.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Walter Grassroot",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%9C%E6%B5%B7%E5%A4%A7%E9%BB%84%E9%B1%BC.jpg"
+  },
+  "hairtail": {
+    "url": "assets/fish/hairtail.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Totti",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trichiurus_lepturus_Umitamago.jpg"
+  },
+  "seabream": {
+    "url": "assets/fish/seabream.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "author": "Miya",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pagrus_major_Red_seabream_ja01.jpg"
+  },
+  "grouper": {
+    "url": "assets/fish/grouper.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "author": "Bernard DUPONT from FRANCE",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blacktip_Grouper_(Epinephelus_fasciatus)_(6132696543)_(cropped).jpg"
+  },
+  "mackerel": {
+    "url": "assets/fish/mackerel.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "author": "(Cuvier)",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scomberomorus_niphonius_Naturalis_Biodiversity_Center_-_RMNH.ART.192_-_Scomberomorus_nichonius_(Cuvier)_-_Kawahara_Keiga_-_1823_-_1829_-_Siebold_Collection_-_pencil_drawing_-_water_colour.jpeg"
+  },
+  "tuna": {
+    "url": "assets/fish/tuna.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "author": "OAR/National Undersea Research Program (NURP)",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yellowfin_tuna_nurp.jpg"
+  },
+  "marlin": {
+    "url": "assets/fish/marlin.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Robert Webster",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Istiophorus_platypterus_101956558.jpg"
+  },
+  "shark": {
+    "url": "assets/fish/shark.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "NOAA Photo Library",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Corl0207_(28225976491).jpg"
+  },
+  "anglerfish": {
+    "url": "assets/fish/anglerfish.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "author": "Unknown",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monkfish.jpg"
+  },
+  "sunfish": {
+    "url": "assets/fish/sunfish.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "author": "U.S. National Oceanic and Atmospheric Administration",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mola_mola.jpg"
+  },
+  "swordfish": {
+    "url": "assets/fish/swordfish.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "author": "Naturalis Biodiversity Center",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xiphias_gladius_Linnaeus,_1758_2599925021.jpg"
+  }
+}

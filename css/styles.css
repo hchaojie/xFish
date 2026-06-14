@@ -142,6 +142,12 @@ html, body {
   background: radial-gradient(120% 120% at 50% 30%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 70%);
 }
 .fish-card__art .fish-svg { max-width: 92%; height: auto; }
+.fish-card__art.has-photo { padding: 0; }
+.fish-card__art.has-photo img { width: 100%; height: 130px; object-fit: cover; display: block; }
+.detail-img { width: 100%; border-radius: 12px; object-fit: cover; max-height: 360px; }
+.img-credit { margin-top: 8px; font-size: 11.5px; color: var(--ink-dim); line-height: 1.5; }
+.img-credit a { color: var(--accent, #7ec6ff); text-decoration: none; }
+.img-credit a:hover { text-decoration: underline; }
 .fish-card__info { padding: 11px 13px 14px; }
 .fish-card__name { font-size: 17px; font-weight: 700; }
 .fish-card__sci { font-size: 11.5px; color: var(--ink-dim); font-style: italic; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

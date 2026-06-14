@@ -1,0 +1,11 @@
+{
+  "name": "xfish",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "xFish 鱼类图鉴科普 Web App（纯静态，无构建）。package.json 仅供 Node 工具脚本使用。",
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "fetch-images": "node tools/fetch-fish-images.mjs"
+  }
+}
