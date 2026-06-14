@@ -270,6 +270,20 @@ export const fish = [
   },
 ];
 
+// 叠加真实照片（若已抓取）。imageUrl 一旦存在，卡片与详情页将优先显示照片而非插画。
+import { images } from './images.js';
+for (const f of fish) {
+  const im = images[f.id];
+  if (im && im.url) {
+    f.imageUrl = im.url;
+    f.imageLicense = im.license || null;
+    f.imageLicenseUrl = im.licenseUrl || null;
+    f.imageAttribution = im.author || null;
+    f.imageSource = im.source || 'Wikimedia Commons';
+    f.imageSourceUrl = im.sourceUrl || null;
+  }
+}
+
 // 便捷查询
 export const fishById = Object.fromEntries(fish.map((f) => [f.id, f]));
 export const groundById = Object.fromEntries(grounds.map((g) => [g.id, g]));

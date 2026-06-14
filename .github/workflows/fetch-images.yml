@@ -1,0 +1,42 @@
+name: Fetch fish images
+
+# 手动触发：在 CI（联网）中按学名抓取各鱼种的开放许可照片，回填后提交。
+on:
+  workflow_dispatch:
+    inputs:
+      allow_nc:
+        description: '是否接受 CC-BY-NC（非商用）图片（默认仅 CC0/CC-BY/CC-BY-SA/公有领域）'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Fetch images
+        run: node tools/fetch-fish-images.mjs
+        env:
+          ALLOW_NC: ${{ inputs.allow_nc }}
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/fish js/data/images.js
+          if git diff --cached --quiet; then
+            echo "没有变化，跳过提交"
+            exit 0
+          fi
+          git commit -m "assets: 抓取鱼类真实照片（Wikimedia，开放许可） [skip ci]"
+          git push

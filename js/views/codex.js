@@ -11,7 +11,7 @@ export function fishCard(f) {
   const g = groundById[f.groundId];
   return `
     <article class="fish-card" data-fish="${f.id}" data-rarity="${f.rarity}" data-ground="${f.groundId}" data-name="${f.name}${f.enName}${f.sciName}">
-      <div class="fish-card__art" style="--accent:${g.theme.accent}">${fishSvg(f.svg, { size: 160, swim: true })}</div>
+      <div class="fish-card__art ${f.imageUrl ? 'has-photo' : ''}" style="--accent:${g.theme.accent}">${f.imageUrl ? `<img src="${f.imageUrl}" alt="${f.name}" loading="lazy" />` : fishSvg(f.svg, { size: 160, swim: true })}</div>
       <div class="fish-card__info">
         <div class="fish-card__name">${f.name}</div>
         <div class="fish-card__sci">${f.sciName}</div>
