@@ -1,5 +1,4 @@
-// 自动生成：tools/fetch-fish-images.mjs。请勿手改。
-export const images = {
+{
   "carp": {
     "url": "assets/fish/carp.jpg",
     "license": "CC BY-SA 3.0",
@@ -128,4 +127,4 @@ export const images = {
     "source": "Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monkfish.jpg"
   }
-};
+}
