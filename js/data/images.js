@@ -64,14 +64,6 @@ export const images = {
     "source": "Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silver_Carp_Adult_(Hypophthalmichthys_molitrix).jpg"
   },
-  "snakehead": {
-    "url": "assets/fish/snakehead.png",
-    "license": "Public domain",
-    "licenseUrl": "",
-    "author": "Circular 1251",
-    "source": "Wikimedia Commons",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Channa_argus_distribution.png"
-  },
   "culter": {
     "url": "assets/fish/culter.jpg",
     "license": "CC BY-SA 4.0",
@@ -96,13 +88,45 @@ export const images = {
     "source": "Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suzuki201302.jpg"
   },
+  "croaker": {
+    "url": "assets/fish/croaker.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Walter Grassroot",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%9C%E6%B5%B7%E5%A4%A7%E9%BB%84%E9%B1%BC.jpg"
+  },
+  "hairtail": {
+    "url": "assets/fish/hairtail.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Totti",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trichiurus_lepturus_Umitamago.jpg"
+  },
+  "seabream": {
+    "url": "assets/fish/seabream.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "author": "Miya",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pagrus_major_Red_seabream_ja01.jpg"
+  },
   "grouper": {
     "url": "assets/fish/grouper.jpg",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "author": "Jarek Tuszyński",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "author": "Bernard DUPONT from FRANCE",
     "source": "Wikimedia Commons",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baltimore_Aquarium_-_Mycteroperca_microlepis_-_05.jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blacktip_Grouper_(Epinephelus_fasciatus)_(6132696543)_(cropped).jpg"
+  },
+  "mackerel": {
+    "url": "assets/fish/mackerel.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "author": "(Cuvier)",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scomberomorus_niphonius_Naturalis_Biodiversity_Center_-_RMNH.ART.192_-_Scomberomorus_nichonius_(Cuvier)_-_Kawahara_Keiga_-_1823_-_1829_-_Siebold_Collection_-_pencil_drawing_-_water_colour.jpeg"
   },
   "tuna": {
     "url": "assets/fish/tuna.jpg",
@@ -111,6 +135,14 @@ export const images = {
     "author": "OAR/National Undersea Research Program (NURP)",
     "source": "Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yellowfin_tuna_nurp.jpg"
+  },
+  "marlin": {
+    "url": "assets/fish/marlin.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Robert Webster",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Istiophorus_platypterus_101956558.jpg"
   },
   "shark": {
     "url": "assets/fish/shark.jpg",
@@ -127,5 +159,21 @@ export const images = {
     "author": "Unknown",
     "source": "Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monkfish.jpg"
+  },
+  "sunfish": {
+    "url": "assets/fish/sunfish.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "author": "U.S. National Oceanic and Atmospheric Administration",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mola_mola.jpg"
+  },
+  "swordfish": {
+    "url": "assets/fish/swordfish.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "author": "Naturalis Biodiversity Center",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xiphias_gladius_Linnaeus,_1758_2599925021.jpg"
   }
 };
