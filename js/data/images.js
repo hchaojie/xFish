@@ -175,5 +175,77 @@ export const images = {
     "author": "Naturalis Biodiversity Center",
     "source": "Wikimedia Commons",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xiphias_gladius_Linnaeus,_1758_2599925021.jpg"
+  },
+  "yellowcatfish": {
+    "url": "assets/fish/yellowcatfish.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "author": "Huangdan2060",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yellow_catfish_Pelteobagrus_fulvidraco_3.JPG"
+  },
+  "eel": {
+    "url": "assets/fish/eel.jpg",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "author": "opencage",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anguilla_japonica.jpg"
+  },
+  "barbel": {
+    "url": "assets/fish/barbel.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "author": "(c) 謝鈞諭, some rights reserved (CC BY)",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taiwan_Torrent_Carp,_%E9%A3%9F%E6%B0%B4%E5%B5%99%E6%BA%AA,_%E7%9F%B3%E5%B2%A1%E5%8D%80,_TXG,_TW_imported_from_iNaturalist_photo_298360133_(cropped).jpg"
+  },
+  "minnow": {
+    "url": "assets/fish/minnow.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "author": "Frank M. Greco",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Opsariichthys_evolans.jpg"
+  },
+  "sleeper": {
+    "url": "assets/fish/sleeper.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "author": "KENPEI",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Odontobutis_obscura2.jpg"
+  },
+  "loach": {
+    "url": "assets/fish/loach.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "author": "Unknown",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Misgurnus_anguillicaudatus.jpg"
+  },
+  "ricefieldeel": {
+    "url": "assets/fish/ricefieldeel.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "author": "Leo G. Nico, USGS, Gainesville, FL",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monopterus_albus_2.jpg"
+  },
+  "bitterling": {
+    "url": "assets/fish/bitterling.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "author": "Seotaro",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rhodeus_ocellatus_ocellatus(Hamamatsu,Shizuoka,Japan).jpg"
+  },
+  "bleak": {
+    "url": "assets/fish/bleak.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Tiouraren (Y.-C. Tsai)",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hemiculter_leucisculus_Taijiang_National_Park.jpg"
   }
 };

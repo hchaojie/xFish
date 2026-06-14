@@ -35,6 +35,14 @@ export const grounds = [
     desc: '远洋与深海光线稀薄、水压巨大，生活着体型庞大的远洋掠食者与形态奇异的深渊居民。',
     theme: { top: '#1b2a6b', mid: '#101d52', deep: '#050a26', accent: '#5b7bff' },
   },
+  {
+    id: 'qiandao',
+    name: '千岛湖',
+    icon: '🏝️',
+    short: '碧水千岛的深湖',
+    desc: '千岛湖（新安江水库）是华东著名的大型深水人工湖，水质清冽、岛屿星罗。鲢鳙"保水鱼"享誉全国，更藏有翘嘴、银鱼及众多土著小型鱼，鱼类多样性极高。',
+    theme: { top: '#2ba38a', mid: '#178072', deep: '#08443f', accent: '#86ecc8' },
+  },
 ];
 
 export const rarities = {
@@ -74,8 +82,8 @@ export const fish = [
     imageUrl: null,
   },
   {
-    id: 'mandarinfish', name: '鳜鱼', sciName: 'Siniperca chuatsi', enName: 'Mandarin Fish',
-    groundId: 'river', rarity: 'epic',
+    id: 'mandarinfish', name: '鳜鱼', alias: '桂鱼', sciName: 'Siniperca chuatsi', enName: 'Mandarin Fish',
+    groundId: 'river', alsoIn: ['qiandao'], rarity: 'epic',
     lengthCm: [25, 60], weightKg: [0.5, 5], depth: '1–5 m', season: '春秋', waterTemp: '15–25℃',
     diet: '肉食（活鱼虾）', habitat: '清洁江河湖泊的石砾底、桥墩与树桩附近', baits: '活泥鳅、小鱼；路亚假饵有效',
     desc: '鳜鱼又名桂鱼，体侧扁、背部隆起，遍布不规则黑褐色斑块以利伏击伪装。它是凶猛的纯肉食鱼，只吃活物，自孵化起便以鱼苗为食。肉质洁白细嫩、"无小刺"，自古为名贵食材，张志和"桃花流水鳜鱼肥"道尽其鲜美。',
@@ -112,8 +120,8 @@ export const fish = [
     imageUrl: null,
   },
   {
-    id: 'bighead', name: '鳙鱼', sciName: 'Hypophthalmichthys nobilis', enName: 'Bighead Carp',
-    groundId: 'lake', rarity: 'common',
+    id: 'bighead', name: '鳙鱼', alias: '胖头鱼／花鲢', sciName: 'Hypophthalmichthys nobilis', enName: 'Bighead Carp',
+    groundId: 'lake', alsoIn: ['qiandao'], rarity: 'common',
     lengthCm: [40, 120], weightKg: [2, 40], depth: '中上层', season: '夏秋', waterTemp: '22–30℃',
     diet: '滤食（浮游动物为主）', habitat: '大型湖库的中上层敞水区', baits: '雾化饵、酸臭饵；浮钓水皮',
     desc: '鳙鱼俗称"花鲢""胖头鱼"，头部硕大几占体长三分之一，以浮游动物为食。它与鲢鱼常一同放养以净化水质，是四大家鱼之一。鱼头富含胶质，"剁椒鱼头"即以其为主料，肥美鲜香。',
@@ -121,8 +129,8 @@ export const fish = [
     imageUrl: null,
   },
   {
-    id: 'silvercarp', name: '鲢鱼', sciName: 'Hypophthalmichthys molitrix', enName: 'Silver Carp',
-    groundId: 'lake', rarity: 'common',
+    id: 'silvercarp', name: '鲢鱼', alias: '白鲢', sciName: 'Hypophthalmichthys molitrix', enName: 'Silver Carp',
+    groundId: 'lake', alsoIn: ['qiandao'], rarity: 'common',
     lengthCm: [40, 110], weightKg: [2, 30], depth: '中上层', season: '夏秋', waterTemp: '23–32℃',
     diet: '滤食（浮游植物为主）', habitat: '湖库敞水区中上层，喜高温肥水', baits: '雾化酸饵；浮钓',
     desc: '鲢鱼体银白侧扁，鳃部具特化的滤食器官，以浮游植物为食，是著名的"水中清道夫"。性情活泼、受惊善跳，在炎热的盛夏摄食最为积极，浮钓鲢鳙是夏季水库钓鱼的一大乐趣。',
@@ -130,7 +138,7 @@ export const fish = [
     imageUrl: null,
   },
   {
-    id: 'snakehead', name: '黑鱼', sciName: 'Channa argus', enName: 'Northern Snakehead',
+    id: 'snakehead', name: '黑鱼', alias: '乌鳢／财鱼', sciName: 'Channa argus', enName: 'Northern Snakehead',
     groundId: 'lake', rarity: 'rare',
     lengthCm: [30, 100], weightKg: [0.5, 8], depth: '中下层、水草丛', season: '夏', waterTemp: '20–30℃',
     diet: '肉食（鱼、虾、蛙）', habitat: '湖泊池塘的水草区、浅滩；可短暂离水', baits: '雷蛙、活鱼；雷强路亚刺激',
@@ -139,8 +147,8 @@ export const fish = [
     imageUrl: null,
   },
   {
-    id: 'culter', name: '翘嘴红鲌', sciName: 'Culter alburnus', enName: 'Topmouth Culter',
-    groundId: 'lake', rarity: 'rare',
+    id: 'culter', name: '翘嘴红鲌', alias: '白鱼／翘嘴', sciName: 'Culter alburnus', enName: 'Topmouth Culter',
+    groundId: 'lake', alsoIn: ['qiandao'], rarity: 'rare',
     lengthCm: [30, 90], weightKg: [0.5, 8], depth: '中上层', season: '夏秋', waterTemp: '18–30℃',
     diet: '肉食（小鱼、虾、昆虫）', habitat: '大型湖库的开阔中上层水域', baits: '亮片、米诺等路亚；活虾',
     desc: '翘嘴体型细长、银光闪闪，下颌显著上翘故得名"翘嘴"，是中上层的高速掠食者。它常成群追逐小鱼，在水面炸起"炸水"涟漪。爆发力强、泳速快，路亚中钩后冲刺迅猛，被钓友称为淡水路亚的"白色闪电"。',
@@ -268,6 +276,134 @@ export const fish = [
     svg: { body: 'billfish', palette: ['#3a4654', '#6b7886', '#c4ccd4'], pattern: 'plain', fin: 'crescent', tail: 'lunate', bill: true },
     imageUrl: null,
   },
+
+  // ---------------- 千岛湖 ----------------
+  {
+    id: 'icefish', name: '银鱼', alias: '面丈鱼', sciName: 'Neosalanx taihuensis', enName: 'Taihu Icefish',
+    groundId: 'qiandao', rarity: 'rare',
+    lengthCm: [4, 9], weightKg: [0.002, 0.01], depth: '中上层', season: '春、秋', waterTemp: '12–25℃',
+    diet: '滤食（浮游动物、小型甲壳类）', habitat: '大型清洁湖泊的开阔中上层水域', baits: '不作垂钓（定置网捕捞）',
+    desc: '银鱼体细长、通体透明无鳞，仅眼睛两点墨黑，宛如游动的玻璃丝，是千岛湖久负盛名的特产。它生命周期仅约一年，繁殖后即死亡。其肉质细嫩、整条可食，"千岛湖银鱼"晒成银鱼干远销各地，鲜美无刺。',
+    svg: { body: 'torpedo', palette: ['#cfd8dd', '#e8eef2', '#fbfdfe'], pattern: 'plain', fin: 'round', tail: 'fork' },
+    imageUrl: null,
+  },
+  {
+    id: 'yellowtail', name: '黄尾鲴', alias: '黄尾', sciName: 'Xenocypris davidi', enName: 'Yellowtail Xenocypris',
+    groundId: 'qiandao', rarity: 'common',
+    lengthCm: [15, 30], weightKg: [0.1, 0.8], depth: '中下层', season: '春至秋', waterTemp: '15–28℃',
+    diet: '刮食（着生藻类、有机碎屑）', habitat: '湖库中下层，常成群在底部岩面刮食', baits: '素饵、麸团；台钓',
+    desc: '黄尾鲴体侧扁、银白而尾鳍橙黄醒目，下位口具角质边缘，用来刮食附着在石面、底泥上的藻类与碎屑，是千岛湖科研调查中的优势种之一。成群活动、繁殖力强，对净化水体、维持食物链有重要作用。',
+    svg: { body: 'spindle', palette: ['#9aa98f', '#c4cfb4', '#eef2e6'], pattern: 'scales', fin: 'round', tail: 'fork' },
+    imageUrl: null,
+  },
+  {
+    id: 'sharpbelly', name: '银飘鱼', alias: '飘鱼', sciName: 'Pseudolaubuca sinensis', enName: 'Chinese Sharpbelly',
+    groundId: 'qiandao', rarity: 'common',
+    lengthCm: [10, 24], weightKg: [0.02, 0.2], depth: '中上层', season: '夏秋', waterTemp: '16–30℃',
+    diet: '杂食（浮游生物、昆虫、藻类）', habitat: '湖库中上层敞水区，游动轻快', baits: '小钩细线、面饵',
+    desc: '银飘鱼体甚侧扁、狭长如柳叶，腹部具锐利的腹棱，全身银亮，游动时如一片银箔在水中飘忽，故得名。它是千岛湖中上层的优势小型鱼，成群巡游，是翘嘴、鳜等掠食者的重要饵料鱼。',
+    svg: { body: 'ribbon', palette: ['#b6c1c8', '#d8e0e5', '#f5f9fb'], pattern: 'plain', fin: 'round', tail: 'fork' },
+    imageUrl: null,
+  },
+  {
+    id: 'yellowcatfish', name: '黄颡鱼', alias: '昂刺／黄辣丁', sciName: 'Pelteobagrus fulvidraco', enName: 'Yellowhead Catfish',
+    groundId: 'qiandao', rarity: 'common',
+    lengthCm: [10, 25], weightKg: [0.05, 0.5], depth: '底层', season: '夏', waterTemp: '18–28℃',
+    diet: '肉食偏杂（小鱼虾、水生昆虫、底栖动物）', habitat: '湖库与江河底层，喜缓流、石缝、淤泥', baits: '蚯蚓、虾肉；夜钓佳',
+    desc: '黄颡鱼体表无鳞、黄褐带暗色斑块，长有触须，胸鳍与背鳍各具一根坚硬带毒腺的硬棘，被刺到会红肿剧痛，故俗称"昂刺"。它昼伏夜出、底栖觅食，肉质细嫩少刺，是煮汤的上等河鲜。',
+    svg: { body: 'catfish', palette: ['#9a7d3a', '#c2a85e', '#e8d79a'], pattern: 'mottle', fin: 'long', tail: 'fork', whiskers: true },
+    imageUrl: null,
+  },
+  {
+    id: 'eel', name: '鳗鲡', alias: '河鳗／白鳝', sciName: 'Anguilla japonica', enName: 'Japanese Eel',
+    groundId: 'qiandao', rarity: 'epic',
+    lengthCm: [40, 100], weightKg: [0.3, 3], depth: '底层、洞穴', season: '暖季夜间', waterTemp: '15–28℃',
+    diet: '肉食（鱼、虾、蟹、水生昆虫）', habitat: '江河湖库底层石缝与洞穴，昼伏夜出', baits: '活饵、腥饵；夜钓延绳',
+    desc: '鳗鲡体呈蛇形、富黏液，是著名的洄游鱼类：在淡水中生长肥育数年后，会顺流入海、远赴西太平洋深处产卵，幼鳗（玻璃鳗）再历经数千公里洄游回到江河。因其无法人工繁殖、苗种全靠野捕，野生鳗鲡资源日益珍贵。',
+    svg: { body: 'ribbon', palette: ['#3f4a3a', '#5f6a52', '#9aa488'], pattern: 'plain', fin: 'ribbon', tail: 'pointed' },
+    imageUrl: null,
+  },
+  {
+    id: 'barbel', name: '光唇鱼', alias: '石斑／罗丝鱼', sciName: 'Acrossocheilus', enName: 'Barred Barbel',
+    groundId: 'qiandao', rarity: 'rare',
+    lengthCm: [10, 20], weightKg: [0.05, 0.3], depth: '中下层、急流', season: '春夏', waterTemp: '14–26℃',
+    diet: '杂食（着生藻类、水生昆虫、有机碎屑）', habitat: '清澈溪流与湖湾的砾石底、急流浅滩', baits: '面饵、蚯蚓；溪流手竿',
+    desc: '光唇鱼体侧具数条醒目的黑色横斑，唇部光滑发达、适于在石面刮食，是山涧溪流的土著小鱼，对水质要求很高，是清洁水体的指示性鱼类。体色艳丽、游姿灵动，近年也成为原生鱼观赏的热门对象。',
+    svg: { body: 'torpedo', palette: ['#6f7a52', '#97a06f', '#cdd3a8'], pattern: 'bars', fin: 'round', tail: 'fork' },
+    imageUrl: null,
+  },
+  {
+    id: 'minnow', name: '马口鱼', alias: '桃花鱼／山溪鱼', sciName: 'Opsariichthys bidens', enName: 'Predatory Carp',
+    groundId: 'qiandao', rarity: 'rare',
+    lengthCm: [8, 20], weightKg: [0.02, 0.2], depth: '中上层、溪流', season: '春（繁殖期色艳）', waterTemp: '14–26℃',
+    diet: '肉食（落水昆虫、小鱼虾）', habitat: '清澈溪流与湖湾上层，喜流水', baits: '路亚微物、飞蝇、昆虫',
+    desc: '马口鱼口大、口裂上翘，繁殖期雄鱼体侧泛起红、蓝、绿交织的绚丽"婚姻色"，并长出珠星，故俗称"桃花鱼"。它性情凶猛、摄食积极，是溪流路亚（微物钓）的明星对象鱼，飞蝇与小亮片都能引发它凌厉的攻击。',
+    svg: { body: 'torpedo', palette: ['#5f8a86', '#9ab0a0', '#dde8d6'], pattern: 'dots', fin: 'round', tail: 'fork', upmouth: true },
+    imageUrl: null,
+  },
+  {
+    id: 'sleeper', name: '沙塘鳢', alias: '土步鱼／塘鳢', sciName: 'Odontobutis', enName: 'Dark Sleeper',
+    groundId: 'qiandao', rarity: 'rare',
+    lengthCm: [8, 18], weightKg: [0.02, 0.15], depth: '底层', season: '春', waterTemp: '12–24℃',
+    diet: '肉食（小鱼虾、水生昆虫）', habitat: '湖库与河沟底层的水草、石砾间，伏底而居', baits: '蚯蚓、小虾；底钓',
+    desc: '沙塘鳢头大体短、褐色斑驳，伏在水底一动不动伏击猎物，行动迟缓却贪食。江南一带视其为时鲜，"春令第一鲜"，清明前后的沙塘鳢（土步鱼）炖蛋、做羹尤为鲜美，是水乡春季餐桌的珍味。',
+    svg: { body: 'snakehead', palette: ['#5a4a38', '#7d6a50', '#b6a385'], pattern: 'blotch', fin: 'long', tail: 'round' },
+    imageUrl: null,
+  },
+  {
+    id: 'loach', name: '泥鳅', alias: '泥鳅', sciName: 'Misgurnus anguillicaudatus', enName: 'Pond Loach',
+    groundId: 'qiandao', rarity: 'common',
+    lengthCm: [10, 20], weightKg: [0.01, 0.1], depth: '底泥', season: '暖季', waterTemp: '15–30℃',
+    diet: '杂食（有机碎屑、藻类、小型底栖动物）', habitat: '湖库、稻田、沟渠的淤泥底，常钻入泥中', baits: '蚯蚓、面饵；底钓',
+    desc: '泥鳅体细长、富黏液，口周生有五对触须，除用鳃呼吸外还能进行"肠呼吸"——吞入空气经肠道交换氧气，因此在缺氧的泥水中也能存活，干旱时更会钻入泥中蛰伏。它营养丰富、有"水中人参"之称，是常见的滋补食材。',
+    svg: { body: 'ribbon', palette: ['#6a5a3e', '#8a7a55', '#c0b088'], pattern: 'mottle', fin: 'round', tail: 'round', whiskers: true },
+    imageUrl: null,
+  },
+  {
+    id: 'ricefieldeel', name: '黄鳝', alias: '鳝鱼', sciName: 'Monopterus albus', enName: 'Asian Swamp Eel',
+    groundId: 'qiandao', rarity: 'common',
+    lengthCm: [25, 70], weightKg: [0.05, 0.8], depth: '底泥、洞穴', season: '夏', waterTemp: '18–30℃',
+    diet: '肉食（蚯蚓、小鱼虾、蛙、昆虫）', habitat: '湖库浅滩、稻田、沟渠的泥洞中', baits: '蚯蚓；插钓、笼捕',
+    desc: '黄鳝体呈蛇形、黄褐带暗斑、无鳞无偶鳍，靠口咽腔与皮肤辅助呼吸，能离水存活较久。它有奇特的"性逆转"现象：幼时为雌性，产卵后逐渐转为雄性。昼伏夜出、穴居泥底，肉质鲜美滋补，是江南夏令名菜的主角。',
+    svg: { body: 'ribbon', palette: ['#8a6a30', '#b08a44', '#dcc080'], pattern: 'plain', fin: 'ribbon', tail: 'pointed' },
+    imageUrl: null,
+  },
+  {
+    id: 'bitterling', name: '鳑鲏', alias: '火片子／彩石鲋', sciName: 'Rhodeus', enName: 'Bitterling',
+    groundId: 'qiandao', rarity: 'rare',
+    lengthCm: [4, 8], weightKg: [0.002, 0.01], depth: '中下层、水草区', season: '春（婚姻色）', waterTemp: '14–26℃',
+    diet: '杂食（藻类、浮游生物、有机碎屑）', habitat: '湖湾、池沼水草丰茂的静水区', baits: '不作垂钓（观赏）',
+    desc: '鳑鲏体小而侧扁，繁殖期雄鱼绽放金属光泽的蓝绿与橙红婚姻色，艳丽如水中宝石。它与河蚌有奇妙的共生：雌鱼借产卵管把卵产入蚌的鳃腔中孵化，幼鱼受蚌庇护，而蚌的幼体（钩介幼虫）又附在鱼身上传播，互利共生。',
+    svg: { body: 'oval', palette: ['#5f8a8a', '#9ac0b8', '#e0eee8'], pattern: 'dots', fin: 'round', tail: 'fan' },
+    imageUrl: null,
+  },
+  {
+    id: 'bleak', name: '蓝刀鱼', alias: '青条丝', sciName: 'Hemiculter leucisculus', enName: 'Sharpbelly Bleak',
+    groundId: 'qiandao', rarity: 'common',
+    lengthCm: [8, 18], weightKg: [0.01, 0.1], depth: '中上层', season: '全年', waterTemp: '12–30℃',
+    diet: '杂食（浮游生物、落水昆虫、藻类）', habitat: '湖库与江河中上层，成群快速巡游', baits: '小钩细线、面饵；浮钓',
+    desc: '蓝刀鱼在千岛湖当地称"青条丝"，又名白条、餐条，体细长侧扁、银白闪亮、背部泛青蓝，腹缘有锐利的腹棱。性情活泼、成群抢食，是最常见、最易上钩的小型鱼之一，也是众多掠食鱼的主要饵料。晒成"青条丝"小鱼干别具风味。',
+    svg: { body: 'torpedo', palette: ['#7f99a8', '#b8c8d0', '#f0f6f8'], pattern: 'plain', fin: 'round', tail: 'fork' },
+    imageUrl: null,
+  },
+  {
+    id: 'sawbelly', name: '似鱎', alias: '白浪丝', sciName: 'Toxabramis swinhonis', enName: 'Swinhoe Sawbelly',
+    groundId: 'qiandao', rarity: 'rare',
+    lengthCm: [6, 13], weightKg: [0.005, 0.04], depth: '中上层', season: '夏秋', waterTemp: '15–28℃',
+    diet: '杂食（浮游生物、藻类、有机碎屑）', habitat: '湖库中上层敞水区，喜成群', baits: '小钩细线；浮钓',
+    desc: '似鱎在千岛湖当地俗称"白浪丝"，又名薄鳘，是中国特有的小型鱼类。体甚侧扁、背缘近平直、腹缘呈弧形，自胸部到肛门具一条完整的腹棱，通体薄而银亮，成群在中上层游动时如一缕缕白丝随浪闪烁，故得"白浪丝"之名。',
+    svg: { body: 'flat', palette: ['#aab8c0', '#cfd9de', '#f6f9fb'], pattern: 'plain', fin: 'round', tail: 'fork' },
+    imageUrl: null,
+  },
+  {
+    id: 'roundtail', name: '圆尾鲴', alias: '青尾', sciName: 'Xenocypris sp.', enName: 'Xenocypris (roundtail)',
+    groundId: 'qiandao', rarity: 'rare',
+    lengthCm: [15, 30], weightKg: [0.1, 0.6], depth: '中下层', season: '春至秋', waterTemp: '15–28℃',
+    diet: '刮食（着生藻类、有机碎屑）', habitat: '湖库中下层，群游于底部刮食', baits: '素饵、麸团；底钓',
+    desc: '圆尾鲴在千岛湖当地称"青尾"，属鲤科鲴属，体侧扁银白、尾鳍带青色，下位口具角质边缘，与黄尾鲴习性相近，以刮食底层着生藻类为生。它成群活动、肉质细嫩，是当地常见的小型食用鱼。（注：当地名"圆尾鲴"暂无确切对应的拉丁种名，此处以鲴属 Xenocypris 标注。）',
+    svg: { body: 'spindle', palette: ['#8a9a8a', '#b6c2b2', '#e8efe6'], pattern: 'scales', fin: 'round', tail: 'fork' },
+    imageUrl: null,
+  },
 ];
 
 // 叠加真实照片（若已抓取）。imageUrl 一旦存在，卡片与详情页将优先显示照片而非插画。
@@ -287,4 +423,5 @@ for (const f of fish) {
 // 便捷查询
 export const fishById = Object.fromEntries(fish.map((f) => [f.id, f]));
 export const groundById = Object.fromEntries(grounds.map((g) => [g.id, g]));
-export const fishByGround = (gid) => fish.filter((f) => f.groundId === gid);
+export const fishByGround = (gid) =>
+  fish.filter((f) => f.groundId === gid || (f.alsoIn && f.alsoIn.includes(gid)));
